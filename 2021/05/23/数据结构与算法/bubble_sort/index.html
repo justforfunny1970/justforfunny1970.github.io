@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Hello World | 好奇屋</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Hello World | 好奇屋">
+  <title>Bubble Sort | 好奇屋</title>
+  <meta name="keywords" content=" Data Structure ">
+  <meta name="description" content="Bubble Sort | 好奇屋">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
@@ -235,19 +235,34 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-数据结构与算法/bubble_sort" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">Bubble Sort</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Algorithm">Algorithm</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">Data Structure</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-05-24 17:50:49'>2021-05-24 15:34</time>
+            Created At : <time class="date" title='Updated At: 2021-05-25 16:34:51'>2021-05-23 16:16</time>
         
     </div>
     <div class="article-meta">
@@ -258,7 +273,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#principle"><span class="toc-text">principle</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#implement"><span class="toc-text">implement</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -274,19 +289,52 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
+        <h1 id="principle"><a href="#principle" class="headerlink" title="principle"></a>principle</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/bubble-sort/">https://www.geeksforgeeks.org/bubble-sort/</a></p>
+</blockquote>
+<pre><code>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+Example: 
+First Pass: 
+( 5 1 4 2 8 ) –&gt; ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 &gt; 1. 
+( 1 5 4 2 8 ) –&gt;  ( 1 4 5 2 8 ), Swap since 5 &gt; 4 
+( 1 4 5 2 8 ) –&gt;  ( 1 4 2 5 8 ), Swap since 5 &gt; 2 
+( 1 4 2 5 8 ) –&gt; ( 1 4 2 5 8 ), Now, since these elements are already in order (8 &gt; 5), algorithm does not swap them.
+Second Pass: 
+( 1 4 2 5 8 ) –&gt; ( 1 4 2 5 8 ) 
+( 1 4 2 5 8 ) –&gt; ( 1 2 4 5 8 ), Swap since 4 &gt; 2 
+( 1 2 4 5 8 ) –&gt; ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –&gt;  ( 1 2 4 5 8 ) 
+Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.
+Third Pass: 
+( 1 2 4 5 8 ) –&gt; ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –&gt; ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –&gt; ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –&gt; ( 1 2 4 5 8 ) 
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
+<h1 id="implement"><a href="#implement" class="headerlink" title="implement"></a>implement</h1><pre><code class="python">import random
+
+
+def create_list(number: int):
+    return [random.randint(1, 99) for i in range(number)]
+
+
+list_1 = create_list(100)
+print(list_1)
+
+
+def bubble_sort():
+    length = len(list_1)
+    # we don&#39;t need to sort in the last time, because in the end there is only one item.
+    # so we subtract one again.
+    for i in range(0, length - 1 - 1):
+        for j in range(0, length - 1 - i):
+            if (list_1[j] &gt; list_1[j + 1]):
+                list_1[j], list_1[j + 1] = list_1[j + 1], list_1[j]
+
+
+bubble_sort()
+print(list_1)
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 registerforgithub@pm.me </span>
